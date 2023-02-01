@@ -113,6 +113,7 @@
 .card--exercise::before {
   background-color: var(--exercise);
   background-image: url(../../assets/images/icon-exercise.svg);
+  background-position: 90% -10%;
 }
 .card--social::before {
   background-color: var(--social);

@@ -19,8 +19,10 @@ const printData = (filter, filter2) => {
     });
 };
 
-printData('weekly');
+printData('weekly', 'Last week');
 
 cardListElement.addEventListener('click', ev => {
   printData(ev.target.dataset.filter, ev.target.dataset.filter2);
+  cardListElement.querySelector('.card__list-item--active').classList.remove('card__list-item--active');
+  ev.target.classList.add('card__list-item--active');
 });
