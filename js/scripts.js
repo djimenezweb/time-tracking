@@ -4,15 +4,20 @@ const fetchData = url => fetch(url);
 
 const printData = (filter, filter2) => {
   const request = fetchData('../data/data.json');
+  console.log(request);
   request
     .then(response => response.json())
     .then(data => {
+      console.log(data);
       const allCurrent = document.querySelectorAll('.card__current');
       const allPrevious = document.querySelectorAll('.card__previous');
       allCurrent.forEach((element, index) => {
         element.textContent = data[index].timeframes[filter].current + 'hrs';
         allPrevious[index].textContent = `${filter2} - ${data[index].timeframes[filter].previous}hrs`;
       });
+    })
+    .catch(error => {
+      console.error(error);
     });
 };
 
